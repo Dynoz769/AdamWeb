@@ -23,13 +23,13 @@
 
 // Mixins.
 
-	@mixin adam1($width) {
-		@include keyframes('adam1') {
+	@mixin bg($width) {
+		@include keyframes('bg') {
 			0%		{ @include vendor('transform', 'translate3d(0,0,0)'); }
 			100%	{ @include vendor('transform', 'translate3d(#{$width * -1},0,0)'); }
 		}
 
-		#adam1 {
+		#bg {
 			background-size: $width auto;
 			width: ($width * 3);
 		}
@@ -125,7 +125,7 @@
 		}
 
 	body {
-		background: _palette(adam1);
+		background: _palette(bg);
 		overflow: hidden;
 
 		// Stops initial animations until page loads.
@@ -199,15 +199,15 @@
 		width: 100%;
 	}
 
-/* adam1 */
+/* bg */
 
-	#adam1 {
-		@include vendor('animation', 'adam1 #{_duration(adam1)} linear infinite');
+	#bg {
+		@include vendor('animation', 'bg #{_duration(bg)} linear infinite');
 		@include vendor('backface-visibility', 'hidden');
 		@include vendor('transform', 'translate3d(0,0,0)');
 
 		/* Set your background with this */
-		background: _misc(adam1);
+		background: _misc(bg);
 
 		background-repeat: repeat-x;
 		height: 100%;
@@ -217,7 +217,7 @@
 		top: 0;
 	}
 
-	@include adam1(_misc(adam1-width) * 1.5);
+	@include bg(_misc(bg-width) * 1.5);
 
 /* Overlay */
 
@@ -345,7 +345,7 @@
 					font-size: 1.1em;
 
 					&:before {
-						background-color: _palette(nav-icon, hover-adam1);
+						background-color: _palette(nav-icon, hover-bg);
 						color: _palette(nav-icon, hover-fg);
 					}
 				}
@@ -355,7 +355,7 @@
 					background: none;
 
 					&:before {
-						background-color: _palette(nav-icon, active-adam1);
+						background-color: _palette(nav-icon, active-bg);
 						color: _palette(nav-icon, active-fg);
 					}
 				}
@@ -391,9 +391,9 @@
 				font-size: 13pt;
 			}
 
-		/* adam1 */
+		/* bg */
 
-			@include adam1(_misc(adam1-width));
+			@include bg(_misc(bg-width));
 
 	}
 
@@ -407,9 +407,9 @@
 				font-size: 12pt;
 			}
 
-		/* adam1 */
+		/* bg */
 
-			@include adam1(_misc(adam1-width) * 0.5);
+			@include bg(_misc(bg-width) * 0.5);
 
 	}
 
@@ -427,9 +427,9 @@
 				font-size: 11pt;
 			}
 
-		/* adam1 */
+		/* bg */
 
-			@include adam1(_misc(adam1-width) * 0.2);
+			@include bg(_misc(bg-width) * 0.2);
 
 		/* Header */
 
@@ -463,9 +463,9 @@
 
 	@include breakpoint('<=mobilep') {
 
-		/* adam1 */
+		/* bg */
 
-			@include adam1(_misc(adam1-width) * 0.275);
+			@include bg(_misc(bg-width) * 0.275);
 
 		/* Header */
 
